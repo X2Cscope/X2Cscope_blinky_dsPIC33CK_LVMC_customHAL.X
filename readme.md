@@ -2,7 +2,7 @@
 
 This is a X2Cscope demo project for [Low Voltage Motor Control (LVMC)](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/DM330031) development board and [dsPIC33CK256MP508](https://www.microchip.com/wwwproducts/en/dsPIC33CK256MP508) microcontroller that is available as a PIM (Plug in Module). 
 
-The purpose is to demonstrate how to integrate X2Cscope ot a custom/bare application.
+The purpose is to demonstrate how to integrate X2Cscope to a custom, bare application without MCC or Harmony configuration.
 
 * X2Cscope documentation: [https://x2cscope.github.io/](https://x2cscope.github.io/)
 * X2Cscope training: [Microchip University](https://mu.microchip.com/page/all-courses)
