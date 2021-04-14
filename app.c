@@ -53,7 +53,7 @@ void myAppInit(void){
 void __attribute__ ( ( interrupt, no_auto_psv ) ) _T1Interrupt (  )
 {
     sawTooth += speed;          // Generate sawtooth
-    if(sawTooth >= (360 * 2) )     // up-to multiple of 360
+    if(sawTooth >= ((uint16_t)360 * (uint16_t)2) )     // up-to multiple of 360
     {   
         sawTooth = 0;
         IO_LED2_Toggle();       //Toggle LED to Signal of sawtooth overflow (hearthbeat)

@@ -8,6 +8,8 @@
  X2Cscope can read the status of the SW1 button and can control the LED2.
  The demo is using custom hardware abstraction layer to show an example
  how to integrate X2Cscope without MCC or Harmony configurator tool.
+ 
+ Microchip LVMC development board is used for this demo. 
 */
 
 /**

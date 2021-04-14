@@ -42,9 +42,14 @@ void initHardware(void){
     __builtin_write_OSCCONH((uint8_t) (0x01));
     __builtin_write_OSCCONL((uint8_t) (0x01));
     // Wait for Clock switch to occur
-    while (OSCCONbits.OSWEN != 0);
-    while (OSCCONbits.LOCK != 1);    
-    
+    while (OSCCONbits.OSWEN != 0)
+    {
+        //MISRA compliance
+    }
+    while (OSCCONbits.LOCK != 1)
+    {
+        //MISRA compliance
+    }   
 }
 
 
