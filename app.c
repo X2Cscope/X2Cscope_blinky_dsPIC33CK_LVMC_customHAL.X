@@ -36,8 +36,8 @@ void myAppInit(void){
     
     //TMR 0; 
     TMR1 = 0x00;
-    //Period = 0.001 s; Frequency = 50000000 Hz; PR 49999; 
-    PR1 = 0xC34F;
+    //Period = 0.0001 s; Frequency = 50000000 Hz; PR 4999; 
+    PR1 = 4999;
     //TCKPS 1:1; PRWIP Write complete; TMWIP Write complete; TON enabled; TSIDL disabled; TCS FOSC/2; TECS T1CK; TSYNC disabled; TMWDIS disabled; TGATE disabled; 
     T1CON = 0x8000;
 
@@ -53,7 +53,7 @@ void myAppInit(void){
 void __attribute__ ( ( interrupt, no_auto_psv ) ) _T1Interrupt (  )
 {
     sawTooth += speed;          // Generate sawtooth
-    if(sawTooth >= ((uint16_t)360 * (uint16_t)2) )     // up-to multiple of 360
+    if(sawTooth >= ((uint16_t)3600 * (uint16_t)2) )     // up-to multiple of 360
     {   
         sawTooth = 0;
         IO_LED2_Toggle();       //Toggle LED to Signal of sawtooth overflow (hearthbeat)
