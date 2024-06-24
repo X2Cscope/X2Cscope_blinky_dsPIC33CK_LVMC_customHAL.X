@@ -26,13 +26,33 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+#include <xc.h>
 #include <stdint.h>
+
+//X2Cscope buffer size in bytes, uses the specified bytes from RAM
+#ifndef X2CSCOPE_BUFFER_SIZE
+#define X2CSCOPE_BUFFER_SIZE 5000
+#endif
+
+//X2Cscope Get Device Info service, 2 bytes
+#ifndef X2CSCOPE_APP_VERSION
+#define X2CSCOPE_APP_VERSION 1
+#endif
+
+typedef const struct compilationDate_type{
+	uint8_t date[11];
+	uint8_t time[8];
+}compilationDate_t;
+
+/** Initialise X2Cscope buffer and LNET protocoll
+ */
+void X2Cscope_Initialise(void* scopeArray, uint16_t scopeSize, uint16_t appVersion, compilationDate_t compilationDate);
+
 /* External X2Cscope API functions that must be used in the applications  */
-void X2CScope_Init(void); // Init X2Cscope and hook communication interfaces.
+void X2Cscope_Init(void); // Init X2Cscope and hook communication interfaces.
 /* Below functions are implemented in X2Cscope library */
-void X2CScope_Communicate(void); // Communicate with X2Cscope GUI on PC side (Call in idle loop)
-void X2CScope_Update(void); // Sample point of scope functionality (Call with fixed periods)
+void X2Cscope_Communicate(void); // Communicate with X2Cscope GUI on PC side (Call in idle loop)
+void X2Cscope_Update(void); // Sample point of scope functionality (Call with fixed periods)
 
 #ifdef __cplusplus
 }

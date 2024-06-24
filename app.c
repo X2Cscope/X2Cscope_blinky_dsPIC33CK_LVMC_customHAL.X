@@ -10,7 +10,7 @@
 #include <stdbool.h>
 #include <math.h>
 #include "hal.h"
-#include "X2CScope/X2CScope.h"
+#include "X2CScope/X2Cscope.h"
 #define PI (3.14)
 /**
  Section: Global Variables
@@ -62,7 +62,7 @@ void __attribute__ ( ( interrupt, no_auto_psv ) ) _T1Interrupt (  )
     myStruct.rad = ((double) sawTooth) * PI / 360.0;
     myStruct.sinus = gain * sin(myStruct.rad);
     
-    X2CScope_Update(); // SAmple point of X2Cscope
+    X2Cscope_Update(); // SAmple point of X2Cscope
     
     // Clear interrupt flag in the end
     IFS0bits.T1IF = false;

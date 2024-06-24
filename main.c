@@ -17,7 +17,7 @@
 */
 #include "hal.h"
 #include "app.h"
-#include "X2CScope/X2CScope.h"
+#include "X2CScope/X2Cscope.h"
 /*
                          Main application
  */
@@ -26,14 +26,14 @@ int main(void)
     // initialize the device
     initHardware();
     myAppInit();
-    X2CScope_Init();
+    X2Cscope_Init();
     __builtin_enable_interrupts();
     
     while (1)
     {
        
         myAppTask(); //Low priority task in the idle loop
-        X2CScope_Communicate(); //Handle the communication woith X2Cscope GUI
+        X2Cscope_Communicate(); //Handle the communication woith X2Cscope GUI
     }
     return 1; 
 }
