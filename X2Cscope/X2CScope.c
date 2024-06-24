@@ -18,29 +18,20 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
 */
 
 /**
- * This file shows example for X2CScope_Init implementation.
+ * This file shows example for X2Cscope_Init implementation.
  */
-#include <xc.h>
-#include "X2CScopeComm.h"
-#include "X2CScope.h"
+#include "X2CscopeComm.h"
+#include "X2Cscope.h"
 
-void X2CScope_Init(void)
+// SCOPE_SIZE is defined in X2Cscope.h, it is the size of the buffer that is sent to the host
+int8_t X2CscopeArray[X2CSCOPE_BUFFER_SIZE]; 
+
+// compalitionDate_t is defined in X2Cscope.h
+// it can be read out by the Get Device Info X2Cscope service
+compilationDate_t compilationDate = {__DATE__, __TIME__};
+
+void X2Cscope_Init(void)
 {
-    /************************************************/
-    /*    Configure IO for UART and X2Cscope        */
-    __builtin_write_RPCON(0x0000);
-    RPOR22bits.RP77R = 0x0001; //RD13->UART1:U1TX
-    RPINR18bits.U1RXR = 0x004E; //RD13->UART1:U1TX    
-    __builtin_write_RPCON(0x0800);
-    
-    U1BRG = 27; //115200 baud @50MHXZ UART clock
-    
-    U1MODEbits.UARTEN = 1;  //Enable UART peripheral
-    U1MODEbits.UTXEN = 1;   //Enable UART TX
-    U1MODEbits.URXEN = 1;   //Enable UART RX
-    
-    /******************************************************/
-    /* Init X2Cscope and connect communication interfaces */
-    X2CScope_HookUARTFunctions(sendSerial, receiveSerial, isReceiveDataAvailable, isSendReady);
-    X2CScope_Initialise();
+    X2Cscope_HookUARTFunctions(sendSerial, receiveSerial, isReceiveDataAvailable, isSendReady);
+    X2Cscope_Initialise((void*)X2CscopeArray, X2CSCOPE_BUFFER_SIZE, X2CSCOPE_APP_VERSION, compilationDate);
 }
