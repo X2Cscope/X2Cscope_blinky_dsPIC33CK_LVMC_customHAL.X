@@ -25,20 +25,21 @@ The demo is ready to use with the [listed hardwares below](#hardware).
 
 ## Use X2Cscope
 
-The X2Cscope tool uses the UART to transfer data from and to the HW. To use this feature follow the steps:
+The X2Cscope tool uses the UART to transfer data from and to the HW. 
 
-1. Verify if X2Cscope plug-in is installed within MPLAB X. Detailed user guide: https://x2cscope.github.io/
-2. Open X2Cscope 
+pyX2Cscope provides GUI and scriptable interface to read and write variables in run time to the target.
 
-![Open X2Cscope](doc/open_X2Cscope.png)
+```bash
+#install
+python -m venv .venv
+.venv\Scripts\activate
+pip install pyx2cscope
+#start pyx2cscope
+python -m pyx2cscope
+```
 
-3. Verify UART settings at the Connection Setup tab and also check the COM port number on the PC. (device manager)
-
-4. Connect to the HW with clicking on the connect sign:
-
-![Open Button](doc/Connect_X2Cscope.png)
-
-6. Use the Watch and Scope data views (available on the Data Views tab).
+pyX2Cscope documentation site:
+[https://x2cscope.github.io/pyx2cscope/](https://x2cscope.github.io/pyx2cscope/)
 
 ## Hardware
 
