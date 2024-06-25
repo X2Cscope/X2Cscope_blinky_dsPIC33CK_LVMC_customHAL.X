@@ -93,6 +93,6 @@ To use the demo only the MPLAB X IDE and XC16 compiler is required.
 * [XC16 Compiler:](https://www.microchip.com/mplab/compilers) Compiler for the Microchip 16bit MCUs
 ## Built With
 
-* [XC16 v1.60](https://www.microchip.com/mplab/compilers) - Microchip C compiler for 16bit micros
+* [XC16 v2.10](https://www.microchip.com/mplab/compilers) - Microchip C compiler for 16bit micros
 low levev drivers
-* [X2Cscope v0.6](https://x2cscope.github.io/) - Run-time firmware based debugger tool
+* [X2Cscope firmware library v2](https://x2cscope.github.io/) - Run-time firmware based debugger tool
