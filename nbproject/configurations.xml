@@ -57,7 +57,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>X2Cscope/libx2cscope2-33ck-elf.a</linkerLibFileItem>
+            <linkerLibFileItem>X2Cscope/libx2cscope2-generic-pic24-dspic33-elf.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
