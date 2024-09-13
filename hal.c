@@ -52,7 +52,7 @@ void initHardware(void){
     }   
     
     /************************************************/
-    /*    Configure IO for UART and X2Cscope        */
+    /*    Configure IO for UART for X2Cscope        */
     /************************************************/
     __builtin_write_RPCON(0x0000);
     RPOR22bits.RP77R = 0x0001; //RD13->UART1:U1TX
